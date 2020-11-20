@@ -3,7 +3,7 @@ package Models;
 public class CartItem {
 
     String name;
-    float qty;
+    public float qty;
     int price;
 
     //in case of new addition to cart

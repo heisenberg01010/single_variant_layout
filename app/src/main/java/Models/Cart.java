@@ -17,13 +17,15 @@ public class Cart {
     //adds a variant based product to cart
     public  int addToCart(Product product, Variant variant){
 
-        String detector =  product.name + " " + variant.name;
+        String detector =  product.name+" "+variant.name;
         if(mapOfItems.containsKey(detector)){
             CartItem cartItem = mapOfItems.get(detector);
-          cartItem.qty++;
-          cartItem.price += variant.price;
-        }
-        else
+            cartItem.qty++;
+            cartItem.price += variant.price;
+
+
+
+        }else
         {
             mapOfItems.put(detector,new CartItem(detector, variant.price));
 
@@ -153,10 +155,17 @@ public class Cart {
     }
 
 
+    public int getVariantQty(Product product, Variant variant) {
+        String detector = product.name + " " + variant.name;
 
+        if(mapOfItems.containsKey(detector)){
 
+            return (int )mapOfItems.get(detector).qty;
+
+        }
+
+        return  0;
+    }
 
 
 }
-
-

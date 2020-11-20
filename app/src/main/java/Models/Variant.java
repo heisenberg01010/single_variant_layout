@@ -1,3 +1,4 @@
+
 package Models;
 
 
@@ -15,5 +16,8 @@ public class Variant {
     public String toString() {
         return  "\u20B9 "+" "+price;
     }
-}
 
+    public String nameString()
+    { return name +"\u20B9 " +price;}
+
+}
